@@ -41,9 +41,13 @@ var yAxis = d3.svg.axis()
 
 
 
-    d3.csv('f.csv', function(error, data){
+    d3.csv('data.csv', function(error, data){
 
-
+//map function goes through every element, then returns a number for median price
+data = data.map(function(d){ 
+    d["Median Price"] = +d["Median Price"]; 
+    return d;
+});
 
 
 
