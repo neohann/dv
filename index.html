@@ -45,7 +45,7 @@ var yAxis = d3.svg.axis()
 
 //map function goes through every element, then returns a number for median price
 data = data.map(function(d){ 
-    d["Median Price"] = +d["Median Price"]; 
+    d["pethouseholds"] = +d["pethouseholds"]; 
     return d;
 });
 
@@ -55,10 +55,10 @@ data = data.map(function(d){
 })
 
 //yscale's domain is from zero to the maximum "Median Price" in your data
-yScale.domain([0, d3.max(data, function(d){ return d["Number of Pet Households"]; })]);
+yScale.domain([0, d3.max(data, function(d){ return d["pethouseholds"]; })]);
 
 //xscale is unique values in your data (Age Group, since they are all different)
-xScale.domain(data.map(function(d){ return d["Location"]; }));
+xScale.domain(data.map(function(d){ return d["location"]; }));
 
 svg.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
@@ -67,9 +67,9 @@ svg.append("g")
     .enter()
     .append("rect")
     .attr("class", "bar")
-    .attr("x", function(d){ return xScale(d["Location"]); })
-    .attr("y", function(d){ return yScale(d["Number of Pet Households"]); })
-    .attr("height", function(d){ return height - margin.top - margin.bottom - yScale(d["Number of Pet Households"]); })
+    .attr("x", function(d){ return xScale(d["location"]); })
+    .attr("y", function(d){ return yScale(d["pethouseholds"]); })
+    .attr("height", function(d){ return height - margin.top - margin.bottom - yScale(d["pethouseholds"]); })
     .attr("width", function(d){ return xScale.rangeBand(); });
 
     </script>

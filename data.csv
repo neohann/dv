@@ -1,4 +1,4 @@
-Location,Number of Pet Households,Dog Population,Cat Population
+location,pethouseholds,dog,cat
 Alabama,1088,1410,1252
 Arizona,1497,1798,1438
 Arkansas,716,1097,810
@@ -48,4 +48,3 @@ Washington,1649,1609,1844
 West Virginia,475,648,628
 Wisconsin,1352,1138,1510
 Wyoming,137,125,144
-,,,
