@@ -58,8 +58,8 @@ data = data.map(function(d){
 yScale.domain([0, 5000]);
 
 //xscale is unique values in your data (Age Group, since they are all different)
-xScale.domain(data.map(function(d){ return d["location"]; }));
-
+xScale.domain(data.map(function(d){ return d.location; }));
+ x.domain(data.map(function(d) { return d.letter; }));
 svg.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
     .selectAll(".bar")
