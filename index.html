@@ -55,8 +55,8 @@ data = data.map(function(d){
 })
 
 //yscale's domain is from zero to the maximum "Median Price" in your data
-  y.domain([0, d3.max(data, function(d) { return d.pethouseholds; })]);
-yScale.domain([0, d3.max(data, function(d){ return d["pethouseholds"]; })]);
+
+yScale.domain([0, d3.max(data, function(d){ return d.pethouseholds; })]);
 
 //xscale is unique values in your data (Age Group, since they are all different)
 xScale.domain(data.map(function(d){ return d.location; }));
